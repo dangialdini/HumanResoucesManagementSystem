@@ -11,7 +11,6 @@ using SharpRepository.Repository.Specifications;
 using HookIn.Team_D;
 using Services.Service;
 using Services.Service.Interfaces;
-using System.Data.Entity;
 
 
 namespace HookIn

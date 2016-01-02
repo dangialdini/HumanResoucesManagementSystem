@@ -34,3 +34,38 @@ C:\Users\dangi\Desktop\Visual Studio\HRMS\HRMS\HookIn\bin\Debug\System.Net.Http.
 C:\Users\dangi\Desktop\Visual Studio\HRMS\HRMS\HookIn\bin\Debug\System.Net.Http.WebRequest.xml
 C:\Users\dangi\Desktop\Visual Studio\HRMS\HRMS\HookIn\obj\Debug\HookIn.exe
 C:\Users\dangi\Desktop\Visual Studio\HRMS\HRMS\HookIn\obj\Debug\HookIn.pdb
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\HookIn.exe.config
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\HookIn.exe
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\HookIn.pdb
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Domain.dll
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\EntityFramework.dll
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Microsoft.Practices.Unity.WebApi.dll
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Newtonsoft.Json.dll
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Services.dll
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\SharpRepository.EfRepository.dll
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\SharpRepository.Repository.dll
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\System.Net.Http.dll
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\System.Net.Http.WebRequest.dll
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\WebActivatorEx.dll
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Domain.pdb
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Services.pdb
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\EntityFramework.xml
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Microsoft.Practices.Unity.xml
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Microsoft.Practices.Unity.WebApi.xml
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\Newtonsoft.Json.xml
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\System.Net.Http.xml
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\bin\Debug\System.Net.Http.WebRequest.xml
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\obj\Debug\HookIn.exe
+C:\Users\dangi\Desktop\GitHub\Human-Resouces-Management-System\HookIn\obj\Debug\HookIn.pdb
