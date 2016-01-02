@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employee Records</h2>
+
+<hr />
+
+<div>
+    <div id="autoComplete" style="width: 50%; margin-left:190px; font-size: medium;">
+        <input id="employees" style="text-align:center;"/>
+    </div>
+    <br>
+    <div id="grid" style="width: 80%; margin: auto; ">
+        <script type="text/x-kendo-template" id="template">
+            <div class="toolbar">
+                <label class="filters">Show Employees By Company:</label>
+                <input type="search" id="companies" style="width: 150px" />               
+            </div>
+        </script>
+        <div id="details"></div>
+        <script type="text/x-kendo-template" id="template2">
+            <div id="details-container">
+                <h2>#= Firstname # #= Lastname #</h2>
+                <dl>
+                    <dt>Company: #= Company.Name #</dt>
+                    <dt>Phone: #= Phone #</dt>
+                    <dt>Email: #= Email #</dt>
+                    <dt>Birth Date: #= kendo.toString(DateOfBirth, "MMMM dd, yyyy") #</dt>
+                </dl>
+            </div>
+        </script>
+    </div>
+</div>
+
+<style>
+    .toolbar{
+        float: right;
+    }
+    .filters{
+        padding-left: 250px;
+    }
+    h2{
+        text-align: center;
+    }
+    #grid{   
+        box-shadow: -2px 4px 50px -15px rgba(0,0,0,0.75);
+    }
+    #employees{
+        box-shadow: -2px 4px 50px -15px rgba(0,0,0,0.75);
+    }
+</style>
+
+@section scripts{
+@{
+    var area = (string)ViewContext.RouteData.DataTokens["area"] ?? "";
+}
+<script src="~/Scripts/Employee/@(area.ToLower())-index.js"></script>
+}

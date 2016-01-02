@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<h3>Project</h3>
+
+<div class="form-horizontal" id="project-form">
+    <div class="form-group">
+        <label class="col-md-2 control-label">Enhancement Request</label>
+        <div class="col-md-10">
+            <input name="EnhancementRequestId" data-bind="value: enhancementRequestId" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Manager</label>
+        <div class="col-md-10">
+            <input name="ManagerId" data-bind="value: managerId" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Start</label>
+        <div class="col-md-10">
+            <input name="Start" data-bind="value: start" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Finish</label>
+        <div class="col-md-10">
+            <input name="Finish" data-bind="value: finish" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn btn-primary" data-bind="enabled: submitEnabled, click: submit" type="button">Submit</button>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+<script src="~/Scripts/Developer/Project/create.js"></script>
+}

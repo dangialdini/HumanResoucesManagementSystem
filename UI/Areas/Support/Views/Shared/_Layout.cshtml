@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Support Layout</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/kendocss")
+    <link href="~/Areas/Support/Content/CSS/support-ticket.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/kendojs")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+    <script src="~/Scripts/kendo/2014.3.1411/cultures/kendo.culture.en-AU.min.js"></script>
+    <script src="~/Scripts/moment.min.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Portal", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "Support" }, new { })</li>
+                    <li>@Html.ActionLink("Support Tickets", "Index", "Ticket", new { area = "Support" }, new { })</li>
+                    <li>@Html.ActionLink("Staff Roster", "Index", "Schedule", new { area = "Support" }, new { })</li>
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div>
+        <h2 style="float:left">Support Department</h2>
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

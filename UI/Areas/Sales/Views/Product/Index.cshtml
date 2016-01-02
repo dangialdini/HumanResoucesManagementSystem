@@ -1,0 +1,131 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div id="specifics">
+
+    <div id="application"></div>
+</div>
+
+@section Scripts{
+    <script id="add-template" type="text/x-kendo-template">
+        <a class="k-button" href="\#/create"><span class="k-icon k-add"></span>Add New Product</a>
+    </script>
+    <script id="create-template" type="text/x-kendo-template">
+        <h3>Create</h3>
+        <div class="form-horizontal" id="create-form">
+            <div class="form-group">
+                <label class="col-md-2 control-label">Name</label>
+                <div class="col-md-6">
+                    <input name="Name" data-bind="value: Name" required />
+                    <span class="k-invalid-msg" data-for="Name"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Unit Price</label>
+                <div class="col-md-6">
+                    <div class="input-group" style="width: auto">
+                        <div class="input-group-addon">$</div>
+                        <input name="UnitPrice" data-bind="value: UnitPrice" required />
+                    </div>
+                    <span class="k-invalid-msg" data-for="UnitPrice"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Descripton</label>
+                <div class="col-md-10">
+                    <textarea name="Description" data-bind="value: Description" rows="5" class="form-control" ></textarea>
+                    <span class="k-invalid-msg" data-for="Description"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button class="btn btn-primary" data-bind="enabled: submitEnabled, click: submit">Create</button>
+                    <a class="btn btn-default" href="#/">Back To Index</a>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="index-template" type="text/x-kendo-template">
+        <h3>Index</h3>
+        <input id="autocomplete" />
+        <div id="product-grid"></div>
+    </script>
+
+    <script id="edit-template" type="text/x-kendo-template">
+        <h3>Edit</h3>
+        <div class="form-horizontal" id="edit-form">
+            <input type="hidden" data-bind="value: current.ProductId" name="ProductId" />
+            <div class="form-group">
+                <label class="col-md-2 control-label">Name</label>
+                <div class="col-md-6">
+                    <input name="Name" data-bind="value: current.Name" required />
+                    <span class="k-invalid-mg" data-for="Name"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Unit Price</label>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        <input name="UnitPrice" data-bind="value: current.UnitPrice" required />
+                    </div>
+                    <span class="k-invalid-mg" data-for="UnitPrice"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Descripton</label>
+                <div class="col-md-6">
+                    <textarea name="Description" data-bind="value: current.Description" rows="5" class="form-control"></textarea>
+                    <span class="k-invalid-mg" data-for="Description"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button class="btn btn-primary" data-bind="enabled: submitEnabled, click: submit" type="button">Update</button>
+                    <a class="btn btn-default" href="#/">Back To Index</a>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="detail-template" type="text/x-kendo-template">
+        <h3>Details</h3>
+        <dl class="dl-horizontal">
+            <dt>Name</dt>
+            <dd data-bind="text: current.Name"></dd>
+            <dt>Unit Price</dt>
+            <dd data-bind="text: unitPrice"></dd>
+            <dt>Description</dt>
+            <dd data-bind="text: current.Description"></dd>
+        </dl>
+        <a class="btn btn-default" href="#/">Back To Index</a>
+    </script>
+
+    <script src="~/Scripts/Sales/product-grid.js"></script>
+
+}
+
+<style>
+    h2 {
+        font-size: 16px;
+    }
+
+    #specifics {
+        margin: 10px, 7px, 10px, 4px;
+    }
+
+    #product-grid {
+        margin: 10px;
+    }
+
+    #above {
+        margin: 10px;
+    }
+    input,
+    select,
+    textarea {
+        max-width: 100%;
+    }
+</style>

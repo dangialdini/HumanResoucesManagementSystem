@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container body-content">
+    <h2>Welcome To Training</h2>
+    @Html.ActionLink("Training - Session", "Index", "Schedule", new { area = "Training" }, new { @class = "btn btn-success" })
+
+    @Html.ActionLink("Training - Type", "Index", "TrainingType", new { area = "Training" }, new { @class = "btn btn-success" })
+
+    @Html.ActionLink("Training", "Index", "Trainings", new { area = "Training" }, new { @class = "btn btn-success" })
+</div>

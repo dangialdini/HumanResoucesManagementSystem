@@ -1,0 +1,208 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Development/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Project Management</h2>
+
+<div id="project-grid">
+
+</div>
+
+<div id="application">
+
+</div>
+
+@*<input id="autocomplete" data-bind="value: selectedProduct, source: products" />*@
+
+@section scripts {
+<style>
+    .k-dropdown {
+        width: 100%;
+    }
+</style>
+@*<script>
+    $("#autocomplete").kendoAutoComplete({
+        valuePrimitive: false,
+        dataTextField: "name",
+        change: function () {
+            debugger;
+            console.log("event :: change (" + viewModel.displaySelectedProduct() + ")");
+        }
+    });
+    var viewModel = kendo.observable({
+        selectedProduct: null,
+        products: [
+          { id: 1, name: "Coffee" },
+          { id: 2, name: "Tea" },
+          { id: 3, name: "Juice" }
+        ],
+        displaySelectedProduct: function () {
+            var selectedProduct = this.get("selectedProduct");
+            return kendo.stringify(selectedProduct, null, 4);
+        }
+    });
+
+    kendo.bind($("#autocomplete"), viewModel);
+</script>*@
+<script id="add-template" type="text/x-kendo-template">
+    <a class="k-button" href="\#/create"><span class="k-icon k-add"></span>Add New Record</a>
+</script>
+<script id="create-template" type="text/x-kendo-template">
+    <h3>Create</h3>
+    <div class="form-horizontal" id="create-form">
+        <div class="form-group">
+            <label class="col-md-2 control-label">Enhancement Request</label>
+            <div class="col-md-6">
+                <input name="EnhancementRequestId" data-bind="value: enhancementRequestId" required />
+                <span class="k-invalid-msg" data-for="EnhancementRequestId"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Manager</label>
+            <div class="col-md-6">
+                <input name="ManagerId" data-bind="value: manager" required />
+                <span class="k-invalid-msg" data-for="ManagerId"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Start</label>
+            <div class="col-md-10">
+                <input name="Start" data-bind="value: start" required data-type="date" />
+                <span class="k-invalid-msg" data-for="Start"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Finish</label>
+            <div class="col-md-10">
+                <input name="Finish" data-bind="value: finish" required data-type="date" />
+                <span class="k-invalid-msg" data-for="Finish"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button class="btn btn-primary" data-bind="enabled: submitEnabled, click: submit" type="button">Start Project</button>
+                <a class="btn btn-default" href="#/">Back To Index</a>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="index-template" type="text/x-kendo-template">
+    <h3>Index</h3>
+    <div id="index-grid"></div>
+</script>
+<script id="edit-template" type="text/x-kendo-template">
+    <h3>Edit</h3>
+    <div class="form-horizontal" id="edit-form">
+        <input type="hidden" data-bind="value: current.Id" name="Id" />
+        <div class="form-group">
+            <label class="col-md-2 control-label">Enhancement Request</label>
+            <div class="col-md-6">
+                <input name="EnhancementRequestId" data-bind="value: current.EnhancementRequestId" required />
+                <span class="k-invalid-msg" data-for="EnhancementRequestId"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Manager</label>
+            <div class="col-md-6">
+                <input name="ManagerId" data-bind="value: manager" required />
+                <span class="k-invalid-msg" data-for="ManagerId"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Start</label>
+            <div class="col-md-10">
+                <input name="Start" data-bind="value: current.Start" required />
+                <span class="k-invalid-msg" data-for="Start"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Finish</label>
+            <div class="col-md-10">
+                <input name="Finish" data-bind="value: current.Finish" required />
+                <span class="k-invalid-msg" data-for="Finish"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button class="btn btn-primary" data-bind="enabled: submitEnabled, click: submit" type="button">Submit</button>
+                <a class="btn btn-default" href="#/">Back To Index</a>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="detail-template" type="text/x-kendo-template">
+    <h3>Details</h3>
+    <dl class="dl-horizontal">
+        <dt>Enhancement Request</dt>
+        <dd data-bind="text: current.EnhancementRequest"></dd>
+        <dt>Manager</dt>
+        <dd data-bind="text: current.Employee"></dd>
+        <dt>Start</dt>
+        <dd data-bind="text: start"></dd>
+        <dt>Finish</dt>
+        <dd data-bind="text: finish"></dd>
+    </dl>
+    <a class="btn btn-default" href="#/">Back To Index</a>
+</script>
+<script id="task-template" type="text/x-kendo-template">
+    <h3>Tasks</h3>
+    <div class="form-horizontal" id="task-form">
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="DeveloperId">Developer</label>
+            <div class="col-md-6">
+                <input name="DeveloperId" data-bind="value: developerId" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="Description">Description</label>
+            <div class="col-md-6">
+                <textarea name="Description" data-bind="value: description" rows="5" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="Start">Start</label>
+            <div class="col-md-6">
+                <input name="Start" data-bind="value: start" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="Finish">Finish</label>
+            <div class="col-md-6">
+                <input name="Finish" data-bind="value: finish" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button class="btn btn-primary" data-bind="click: addTask">Add Task</button>
+            </div>
+        </div>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Developer</th>
+                <th>Description</th>
+                <th>Start</th>
+                <th>Finish</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody data-template="task-row-template" data-bind="source: tasks">
+
+        </tbody>
+    </table>
+    <a class="btn btn-default" href="#/" >Back To Project Index</a>
+</script>
+<script id="task-row-template" type="text/x-kendo-template">
+    <tr>
+        <td>#= DeveloperId #</td>
+        <td>#= Description #</td>
+        <td>#= kendo.format("{0:d}", Start) #</td>
+        <td>#= kendo.format("{0:d}", Finish) #</td>
+        <td><button data-bind="click: deleteTask">Delete</button></td>
+    </tr>
+</script>
+<script src="~/Scripts/Developer/Project/index.js"></script>
+}

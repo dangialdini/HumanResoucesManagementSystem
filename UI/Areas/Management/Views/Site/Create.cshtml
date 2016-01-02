@@ -1,0 +1,62 @@
+﻿@model UI.Areas.Management.Models.ManagementSiteViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Register</h2>
+
+<h3>Site</h3>
+<div class="form-horizontal" id="site-form">
+    <div class="form-group">
+        <label class="col-md-2 control-label">Customer</label>
+        <div class="col-md-10">
+            <input name="CustomerId" data-bind="value: customerId" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Address</label>
+        <div class="col-md-10">
+            <input name="AddressId" data-bind="value: addressId" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Name</label>
+        <div class="col-md-10">
+            <input name="Name" data-bind="value: name" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Phone</label>
+        <div class="col-md-10">
+            <input name="Phone" data-bind="value: phone" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Email</label>
+        <div class="col-md-10">
+            <input name="Email" data-bind="value: email" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Franchise</label>
+        <div class="col-md-10">
+            <input name="Franchise" data-bind="value: franchise" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">HeadQuarters</label>
+        <div class="col-md-10">
+            <input name="HeadQuarters" data-bind="value: headQuarters" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn btn-primary" data-bind="enabled: submitEnabled, click: submit" type="button">Submit</button>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/Site/create.js"></script>
+}

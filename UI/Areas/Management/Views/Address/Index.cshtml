@@ -1,0 +1,61 @@
+﻿@model UI.Areas.Management.Models.ManagementAddressViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<h2>Management Address Index</h2>
+
+<div id="management-address-grid"></div>
+
+<div id="address-map" style="width:80%"></div>
+
+
+@*This is done using angular*@
+@*<div ng-app="addressApp">
+    <div ng-controller="AddressController">
+        <kendo-grid options="gridOptions">
+
+        </kendo-grid>
+    </div>
+</div>*@
+
+<script id="address-popup-editor" type="text/x-kendo-template">
+    
+    <div class="k-edit-label">
+        <label for="street1">Street 1</label>
+    </div>
+    <div data-container-for="street1" class="k-edit-field">
+        <input name="street1" class="k-input k-textbox" data-bind="value: street1" type="text" />
+    </div>
+
+    <div class="k-edit-label">
+        <label for="street2">Street 2</label>
+    </div>
+    <div data-container-for="street2" class="k-edit-field">
+        <input name="street2" class="k-input k-textbox" data-bind="value: street2" type="text" />
+    </div>
+
+    <div class="k-edit-label">
+        <label for="suburbId">Select Suburb</label>
+    </div>
+    <div data-container-for="suburbId" class="k-edit-field">
+        <input name="suburbId" required data-text-field="Name" data-value-field="Id" data-bind="value: suburbId" />
+    </div>
+
+
+
+</script>
+    
+
+
+@section scripts {
+    @{
+        var area = (string)ViewContext.RouteData.DataTokens["area"] ?? "";
+    }
+
+    <script src="~/Scripts/Address/@(area.ToLower())-index.js"></script>
+    @*<script src="~/Scripts/Customer/@((ViewContext.RouteData.DataTokens["area"] as string).ToLower() ?? "")-index.js"></script>*@
+
+}

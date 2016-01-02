@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Development/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Enhancement Requests</h2>
+
+<div id="grid">
+
+</div>
+<script id="popup-editor" type="text/x-kendo-template">
+    <div class="k-edit-label">
+        <label for="Customer">Customer</label>
+    </div>
+    <div data-container-for="Customer" class="k-edit-field">
+        <input name="Customer" required data-text-field="Name" data-value-field="Id" data-bind="value: Customer" />
+    </div>
+    <div class="k-edit-label">
+        <label for="Description">Description</label>
+    </div>
+    <div data-container-for="Description" class="k-edit-field">
+        <textarea class="k-input k-textbox" name="Description" required="required" data-bind="value:Description" rows="5"></textarea>
+    </div>
+    <div class="k-edit-label">
+        <label for="Weight">Priority</label>
+    </div>
+    <div data-container-for="Weight" class="k-edit-field">
+        <input data-role="numerictextbox" name="Weight" min="1" max="10" data-bind="value: Weight" />
+    </div>
+    <div class="k-edit-label">
+        <label for="Outcome">Outcome</label>
+    </div>
+    <div data-container-for="Outcome" class="k-edit-field">
+        <input name="Outcome" required data-text-field="Result" default-value="Id: 1, Result:Pending" data-value-field="Id" data-bind="value: Outcome" />
+    </div>
+    <div class="k-edit-label">
+        <label for="Timestamp">Date</label>
+    </div>
+    <div data-container-for="Timestamp" class="k-edit-field">
+        <input data-role= "datetimepicker" format= "{0:yyyy-MM-dd, HH:mm}" data-bind="value: Timestamp" />
+    </div>
+</script>
+<script src="~/Areas/Development/Scripts/enhancementRequest-index.js"></script>
+<link href="~/Areas/Development/Styles/EditStyle.css" rel="stylesheet" />

@@ -1,0 +1,21 @@
+﻿@model UI.Areas.Management.Models.ManagementCustomerViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Shared Customer Index</h2>
+
+<div id="customer-grid"></div>
+
+
+@section scripts {
+    @{
+        var area = (string)ViewContext.RouteData.DataTokens["area"] ?? "";
+    }
+
+    <script src="~/Scripts/Customer/@(area.ToLower())-index.js"></script>
+    @*<script src="~/Scripts/Customer/@((ViewContext.RouteData.DataTokens["area"] as string).ToLower() ?? "")-index.js"></script>*@
+
+}
+

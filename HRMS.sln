@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HookIn", "HookIn\HookIn.csproj", "{0DC9D08F-7532-4268-823B-9DF5280B96F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{FED91F33-2A87-46DA-B458-6D7D16CA76B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{1B4DB0B6-D59D-41C9-9142-227FA03958D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{B83A7D18-1CED-4D68-B845-2F4D992A0CF1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8DD1038F-C255-4018-AA5B-2CBB444E6367}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://udsds22015.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = HookIn\\HookIn.csproj
+		SccProjectName1 = HookIn
+		SccLocalPath1 = HookIn
+		SccProjectUniqueName2 = Domain\\Domain.csproj
+		SccProjectName2 = Domain
+		SccLocalPath2 = Domain
+		SccProjectUniqueName3 = Services\\Services.csproj
+		SccProjectName3 = Services
+		SccLocalPath3 = Services
+		SccProjectUniqueName4 = UI\\UI.csproj
+		SccProjectName4 = UI
+		SccLocalPath4 = UI
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DC9D08F-7532-4268-823B-9DF5280B96F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DC9D08F-7532-4268-823B-9DF5280B96F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DC9D08F-7532-4268-823B-9DF5280B96F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DC9D08F-7532-4268-823B-9DF5280B96F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FED91F33-2A87-46DA-B458-6D7D16CA76B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED91F33-2A87-46DA-B458-6D7D16CA76B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED91F33-2A87-46DA-B458-6D7D16CA76B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED91F33-2A87-46DA-B458-6D7D16CA76B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B4DB0B6-D59D-41C9-9142-227FA03958D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B4DB0B6-D59D-41C9-9142-227FA03958D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B4DB0B6-D59D-41C9-9142-227FA03958D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B4DB0B6-D59D-41C9-9142-227FA03958D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B83A7D18-1CED-4D68-B845-2F4D992A0CF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B83A7D18-1CED-4D68-B845-2F4D992A0CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B83A7D18-1CED-4D68-B845-2F4D992A0CF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B83A7D18-1CED-4D68-B845-2F4D992A0CF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

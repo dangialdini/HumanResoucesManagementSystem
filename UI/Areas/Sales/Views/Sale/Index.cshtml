@@ -1,0 +1,166 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div id="specifics">
+    <div id="application"></div>
+    @*<div id="above">
+        <h2>Sale Index</h2>
+
+        <input id="autocompleteEmp" />
+
+
+        <input id="autocomplete" />
+    </div>
+
+    <div id="sale-grid"></div>*@
+</div>
+
+@section Scripts{
+    <script id="add-template" type="text/x-kendo-template">
+        <a class="k-button" href="\#/create"><span class="k-icon k-add"></span>Add New Sale</a>
+    </script>
+    <script id="create-template" type="text/x-kendo-template">
+        <h3>Create</h3>
+        <div class="form-horizontal" id="create-form">
+            <div class="form-group">
+                <label class="col-md-2 control-label">Date</label>
+                <div class="col-md-6">
+                    <input name="Date" data-bind="value: Date"/>
+                    <span class="k-invalid-msg" data-for="Date"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Order Number</label>
+                <div class="col-md-6">
+                    <input name="OrderNumber" data-bind="value: OrderNumber" required />
+                    <span class="k-invalid-msg" data-for="OrderNumber"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Customer</label>
+                <div class="col-md-10">
+                    <input name="Customer" data-bind="value: Customer" required />
+                    <span class="k-invalid-msg" data-for="Customer"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Employee</label>
+                <div class="col-md-10">
+                    <input name="Employee" data-bind="value: Employee" required />
+                    <span class="k-invalid-msg" data-for="Employee"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Is Finalised</label>
+                <div class="col-md-10">
+                    <input type="checkbox" name="Finalised" data-bind="value: Finalised" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button class="btn btn-primary" data-bind="enabled: submitEnabled, click: submit">Create</button>
+                    <a class="btn btn-default" href="#/">Back To Index</a>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="index-template" type="text/x-kendo-template">
+        <h3>Index</h3>
+        <input id="autocomplete" />
+        <input id="autocompleteEmp" />
+        <div id="sale-grid"></div>
+    </script>
+
+    <script id="edit-template" type="text/x-kendo-template">
+        <h3>Edit</h3>
+        <div class="form-horizontal" id="edit-form">
+            <input type="hidden" data-bind="value: current.SaleId" name="SaleId" />
+            <div class="form-group">
+                <label class="col-md-2 control-label">Date</label>
+                <div class="col-md-6">
+                    <input name="Date" data-bind="value: current.Date" />
+                    <span class="k-invalid-msg" data-for="Date"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Order Number</label>
+                <div class="col-md-6">
+                    <input name="OrderNumber" data-bind="value: current.OrderNumber" required />
+                    <span class="k-invalid-msg" data-for="OrderNumber"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Customer</label>
+                <div class="col-md-10">
+                    <input name="Customer" data-bind="value: current.Customer.CustomerId" />
+                    <span class="k-invalid-msg" data-for="Customer"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Employee</label>
+                <div class="col-md-10">
+                    <input name="Employee" data-bind="value: current.Employee.EmployeeId" />
+                    <span class="k-invalid-msg" data-for="Employee"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Is Finalised</label>
+                <div class="col-md-10">
+                    <input id="check" type="checkbox" name="Finalised" data-bind="value: current.Finalised" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button class="btn btn-primary" data-bind="enabled: submitEnabled, click: submit">Update</button>
+                    <a class="btn btn-default" href="#/">Back To Index</a>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="detail-template" type="text/x-kendo-template">
+        <h3>Details</h3>
+        <dl class="dl-horizontal">
+            <dt>Date</dt>
+            <dd data-bind="text: current.Date"></dd>
+            <dt>Order Number</dt>
+            <dd data-bind="text: current.OrderNumber"></dd>
+            <dt>Customer</dt>
+            <dd data-bind="text: current.Customer.CustomerName"></dd>
+            <dt>Employee</dt>
+            <dd data-bind="text: current.Employee.EmployeeName"></dd>
+            <dt>Is Finalised</dt>
+            <dd data-bind="text: current.Finalised"></dd>
+        </dl>
+        @*<div id="sli-grid"></div>*@
+        <a class="btn btn-default" href="#/">Back To Index</a>
+    </script>
+
+
+    <script src="~/Scripts/Sales/sale-grid.js"></script>
+    <script src="~/Scripts/kendo/2014.3.1411/angular.min.js"></script>
+}
+
+<style>
+    h2 {
+        font-size: 16px;
+    }
+
+    #specifics {
+        margin: 10px, 7px, 10px, 4px;
+    }
+
+    #sale-grid {
+        margin: 10px;
+    }
+
+    #above {
+        margin: 10px;
+    }
+
+    .k-grid k-widget{
+        color: blue;
+    }
+</style>

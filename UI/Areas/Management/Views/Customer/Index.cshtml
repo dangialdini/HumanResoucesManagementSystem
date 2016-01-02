@@ -1,0 +1,148 @@
+﻿@model UI.Areas.Management.Models.ManagementCustomerViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Customers</h2>
+
+<div id="customer-chart"></div>
+<div id="customer-grid" style="background-color:orange;width:1000px;"></div>
+<div id="application">
+
+</div>
+
+@section scripts {
+    <style>
+        input,
+        select,
+        textarea {
+            max-width: 100%;
+        }
+
+        .k-dropdown {
+            width: 100%;
+        }
+    </style>
+    <script id="add-template" type="text/x-kendo-template">
+        <a class="k-button" href="\#/create"><span class="k-icon k-add"></span>Add New Customer</a>
+    </script>
+    <script id="create-template" type="text/x-kendo-template">
+        <h3>Create</h3>        
+        <div class="form-horizontal" id="create-form">
+            <div class="form-group">
+                <label class="col-md-2 control-label">Company</label>
+                <div class="col-md-6">
+                    <input name="CompanyId" data-bind="value: name"  required />
+                    <span class="k-invalid-msg" data-for="CompanyId"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Name</label>
+                <div class="col-md-6">
+                    <input name="Name" data-bind="value: name" class="form-control" required placeholder="Enter a Customer Name" />
+                    <span class="k-invalid-msg" data-for="Name"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Franchise</label>
+                <div class="col-md-6">
+                    <input name="Franchise" data-bind="checked: franchise" type="checkbox" />
+                    <span class="k-invalid-msg" data-for="Franchise"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Phone</label>
+                <div class="col-md-6">
+                    <input name="Phone" data-bind="value: phone" class="form-control" required placeholder="Enter contact number" />
+                    <span class="k-invalid-msg" data-for="Phone"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Email</label>
+                <div class="col-md-6">
+                    <input name="Email" data-bind="value: email" class="form-control" required placeholder="Enter a valid Email" />
+                    <span class="k-invalid-msg" data-for="Email"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button class="btn btn-primary" data-bind="enabled: submitEnabled, click: submit" type="button">Submit</button>
+                    <a class="btn btn-default" href="#/">Back To Index</a>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="index-template" type="text/x-kendo-template">
+        <h3>Index</h3>
+        <div id="index-grid"></div>
+    </script>
+    <script id="edit-template" type="text/x-kendo-template">
+        <h3>Edit</h3>
+        <div class="form-horizontal" id="edit-form">
+            <input type="hidden" data-bind="value: current.Id" name="Id" />
+            <div class="form-group">
+                <label class="col-md-2 control-label">Company</label>
+                <div class="col-md-6">
+                    <input name="CompanyId" data-bind="value: current.companyId" required />
+                    <span class="k-invalid-msg" data-for="CompanyId"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Name</label>
+                <div class="col-md-6">
+                    <input name="Name" data-bind="value: current.name" required />
+                    <span class="k-invalid-msg" data-for="Name"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <div class="checkbox">
+                        <label>
+                            <input name="Franchise" data-bind="checked: current.franchise" type="checkbox" /> Franchise
+                        </label>
+                    </div>
+                    <span class="k-invalid-msg" data-for="Franchise"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Phone</label>
+                <div class="col-md-10">
+                    <input name="Phone" data-bind="value: current.phone" required />
+                    <span class="k-invalid-msg" data-for="Phone"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Email</label>
+                <div class="col-md-10">
+                    <input name="Email" data-bind="value: current.email" type="email" required />
+                    <span class="k-invalid-msg" data-for="Email"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button class="btn btn-primary" data-bind="enabled: submitEnabled, click: submit" type="button">Submit</button>
+                    <a class="btn btn-default" href="#/">Back To Index</a>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="detail-template" type="text/x-kendo-template">
+        <h3>Details</h3>
+        <dl class="dl-horizontal">
+            <dt>Customer</dt>
+            <dd data-bind="text: customer.name"></dd>
+            <dt>Franchise</dt>
+            <dd>
+                <input type="checkbox" data-bind="checked: customer.franchise" disabled>
+            </dd>
+            <dt>Phone</dt>
+            <dd data-bind="text: customer.phone"></dd>
+            <dt>Email</dt>
+            <dd data-bind="text: customer.email"></dd>
+        </dl>
+        <a class="btn btn-default" href="#/">Back To Index</a>
+    </script>
+    <script src="~/Scripts/Customer/index.js"></script>
+}

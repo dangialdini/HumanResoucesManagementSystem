@@ -1,0 +1,191 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<div id="action-page-elements">
+    <h4>Actions</h4>
+
+    <div id="above-widget-elements">
+        <div id="gridToggle">
+            <input type="button" value="Grid" id="gridButton" />
+            <input type="button" value="Schedule" id="schedulerButton" />
+        </div>
+
+        <div id="gridControls">
+            <input id="autocompleteEmp" />
+            <input id="autocomplete" />
+        </div>
+
+        <div id="schedulerControls">
+            <div>
+                <label>Filter by Employee: </label>
+                <input id="empCheckbox" type="checkbox" />
+                <input id="scheautocompleteEmp" style="width: 350px; display: inline"  />
+            </div>
+            <div>
+                <label>Filter by Customer: </label>
+                <input id="cusCheckbox" type="checkbox" />
+                <input id="scheautocomplete" style="width: 500px; display: inline" />
+            </div>
+        </div>
+    </div>
+
+    <div id="schedulerSection"></div>
+
+    <div id="grid"></div>
+</div>
+
+
+@section Scripts{
+    @*<script src="~/Scripts/kendo/2014.3.1411/kendo.timezones.min.js"></script>*@
+    <script src="~/Scripts/kendo/2014.3.1411/angular.min.js"></script>
+    <script src="~/Scripts/kendo/2014.3.1411/kendo.angular.min.js"></script>
+    <script src="~/Scripts/Sales/action-grid.js"></script>
+    @*<script src="~/Scripts/Sales/action-scheduler.js"></script>*@
+    <script src="~/Scripts/Sales/action-buttonControls.js"></script>
+
+    <script id="scheduler-event-template" type="text/x-kendo-template">
+        <div class="lead-action">
+            <p>#: title #, </p>
+            <p>#: Customer.CustomerName #,</p>
+            <p>#: Employee.EmployeeName #</p>
+        </div>
+    </script>
+
+    <script id="edit-template" type="text/x-kendo-template">
+        <div class="k-edit-label">
+            <label for="NextContactDate">Next Contact Date</label>
+        </div>
+        <div data-container-for="NextContactDate" class="k-edit-field">
+            <input data-role="datetimepicker" name="NextContactDate" data-bind="value: NextContactDate" />
+        </div>
+        <div class="k-edit-label">
+            <label for="EndContact">End Contact</label>
+        </div>
+        <div data-container-for="EndContact" class="k-edit-field">
+            <input data-role="datetimepicker" name="EndContact" data-bind="value: EndContact" />
+        </div>
+        @*<div class="k-edit-label">
+                <label for="IsAllDay">Is All Day</label>
+            </div>
+            <div data-container-for="IsAllDay" class="k-edit-field">
+                <input type="checkbox" class="k-input" name="IsAllDay" data-bind="value: IsAllDay" />
+            </div>*@
+        <div class="k-edit-label">
+            <label for="title">Notes</label>
+        </div>
+        <div data-container-for="title" class="k-edit-field">
+            <textarea name="title" class="k-input k-textbox" data-bind="value: title" rows="3" />
+        </div>
+        <div class="k-edit-label">
+            <label for="Employee">Employee</label>
+        </div>
+        <div data-container-for="Employee" class="k-edit-field">
+            <input name="Employee" data-bind="value: Employee" data-text-field="EmployeeName" data-value-field="EmployeeId" />
+        </div>
+        <div class="k-edit-label">
+            <label for="Customer">Customer</label>
+        </div>
+        <div data-container-for="Customer" class="k-edit-field">
+            <input name="Customer" data-bind="value: Customer" data-text-field="CustomerName" data-value-field="CustomerId" />
+        </div>
+        <div class="k-edit-label">
+            <label for="Sale">Sale</label>
+        </div>
+        <div data-container-for="Sale" class="k-edit-field">
+            <input name="Sale" data-bind="value: Sale" data-text-field="OrderNumber" data-value-field="SaleId" />
+        </div>
+    </script>
+}
+
+<style>
+    body {
+        padding: 20px;
+    }
+
+    p {
+        padding: 2px;
+        display: inline;
+    }
+
+    input {
+        display: inline;
+        margin: 2px;
+    }
+
+    #gridToggle {
+        float: right;
+    }
+
+    #gridButton {
+        background-color: #ccddff;
+        border-color: #0044cc;
+        color: #002a80;
+    }
+
+    #schedulerButton {
+        background-color: #ccddff;
+        border-color: #0044cc;
+        color: #002a80;
+    }
+
+    #gridButton:hover {
+        border-color: #0044cc;
+        color: #ccddff;
+        background-color: #0044cc;
+    }
+
+    #schedulerButton:hover {
+        border-color: #0044cc;
+        color: #ccddff;
+        background-color: #0044cc;
+    }
+
+    #above-widget-elements {
+        display: inline;
+    }
+
+    #selectorDiv {
+        display: inline;
+        width: 50%;
+    }
+
+    #selector {
+        clear: both;
+        display: inline;
+        width: 10%;
+        padding: 2px;
+    }
+
+    #scheduler-event-template {
+        font-size: small;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    h4 {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    #specifics {
+        margin: 10px, 7px, 10px, 4px;
+    }
+
+    #above {
+        margin: 10px;
+    }
+
+    #schedulerSection {
+        margin: 10px;
+    }
+
+    #grid {
+        margin: 10px;
+    }
+
+    .edit-lead-action {
+        margin: 10px;
+    }
+</style>

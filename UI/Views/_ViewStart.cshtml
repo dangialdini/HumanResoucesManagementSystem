@@ -1,0 +1,12 @@
+﻿@{
+    string area = (string)ViewContext.RouteData.DataTokens["area"] ?? "" ;
+    
+    if(string.IsNullOrEmpty(area))
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+         Layout = "~/Areas/" + area + "/Views/Shared/_Layout.cshtml";
+    }             
+}

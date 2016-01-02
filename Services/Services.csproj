@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B4DB0B6-D59D-41C9-9142-227FA03958D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Services</RootNamespace>
+    <AssemblyName>Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpRepository.EfRepository, Version=1.4.6.15, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpRepository.EfRepository.1.4.6.15\lib\net40\SharpRepository.EfRepository.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpRepository.Repository, Version=1.4.6.15, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpRepository.Repository.1.4.6.15\lib\net40\SharpRepository.Repository.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ContactTypeRepository.cs" />
+    <Compile Include="Repositories\CountryRepository.cs" />
+    <Compile Include="Repositories\CustomerRepository.cs" />
+    <Compile Include="Repositories\EnhancementRequestRepository.cs" />
+    <Compile Include="Repositories\EnhancementRequestOutcomeRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IContactTypeRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ICountryRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ICustomerRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IEmployeeInPositionRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IEnhancementRequestRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IEnhancementRequestOutcomeRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IPositionRepository.cs" />
+    <Compile Include="Repositories\AddressRepository.cs" />
+    <Compile Include="Repositories\CompanyRepository.cs" />
+    <Compile Include="Repositories\ContactRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IAddressRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ICompanyRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IContactRepository.cs" />
+    <Compile Include="Repositories\EmployeeInPositionRepository.cs" />
+    <Compile Include="Repositories\EmployeeRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IEmployeeRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IProductRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IProjectDevelopmentRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ISaleLeadRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ISaleLeadStateRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ISaleLineItemRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ISalePositionLeadRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ISalePositionLeadActionRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ISaleRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ISiteRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IStateRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ISuburbRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ISupportStaffShiftRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ISupportTicketAssignmentRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ISupportTicketRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ITrainingSessionRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ITrainingTypeRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IZoneRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ITicketStateRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ITrainingRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IOfficeRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IPersonRepository.cs" />
+    <Compile Include="Repositories\OfficeRepository.cs" />
+    <Compile Include="Repositories\PersonRepository.cs" />
+    <Compile Include="Repositories\PositionRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ITaskDevelopmentRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ITicketAssignmentActionRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\ProjectDevelopmentRepository.cs" />
+    <Compile Include="Repositories\SaleLeadRepository.cs" />
+    <Compile Include="Repositories\SaleLeadStateRepository.cs" />
+    <Compile Include="Repositories\SaleLineItemRepository.cs" />
+    <Compile Include="Repositories\SalePositionLeadRepository.cs" />
+    <Compile Include="Repositories\SalePositionLeadActionRepository.cs" />
+    <Compile Include="Repositories\SaleRepository.cs" />
+    <Compile Include="Repositories\SiteRepository.cs" />
+    <Compile Include="Repositories\SupportStaffShiftRepository.cs" />
+    <Compile Include="Repositories\TrainingSessionRepository.cs" />
+    <Compile Include="Repositories\TrainingTypeRepository.cs" />
+    <Compile Include="Repositories\ZoneRepository.cs" />
+    <Compile Include="Repositories\TicketStateRepository.cs" />
+    <Compile Include="Repositories\TrainingRepository.cs" />
+    <Compile Include="Repositories\TaskDevelopmentRepository.cs" />
+    <Compile Include="Repositories\TicketAssignmentActionRepository.cs" />
+    <Compile Include="Repositories\StateRepository.cs" />
+    <Compile Include="Repositories\SuburbRepository.cs" />
+    <Compile Include="Repositories\SupportTicketAssignmentRepository.cs" />
+    <Compile Include="Repositories\SupportTicketRepository.cs" />
+    <Compile Include="Service\CompanyService.cs" />
+    <Compile Include="Service\CustomerService.cs" />
+    <Compile Include="Service\EmployeeService.cs" />
+    <Compile Include="Service\EnhancementRequestService.cs" />
+    <Compile Include="Service\Interfaces\IAddressService.cs" />
+    <Compile Include="Service\AddressService.cs" />
+    <Compile Include="Service\Interfaces\ICompanyService.cs" />
+    <Compile Include="Service\Interfaces\ICustomerService.cs" />
+    <Compile Include="Service\Interfaces\IEmployeeService.cs" />
+    <Compile Include="Service\Interfaces\IEnhancementRequestService.cs" />
+    <Compile Include="Service\Interfaces\IPositionService.cs" />
+    <Compile Include="Service\Interfaces\IProjectDevelopmentService.cs" />
+    <Compile Include="Service\Interfaces\ISaleLeadService.cs" />
+    <Compile Include="Service\Interfaces\ISaleService.cs" />
+    <Compile Include="Service\Interfaces\ISiteService.cs" />
+    <Compile Include="Service\Interfaces\ISupportStaffShiftService.cs" />
+    <Compile Include="Service\Interfaces\ISupportTicketService.cs" />
+    <Compile Include="Service\Interfaces\ISupportTicketStateService.cs" />
+    <Compile Include="Service\Interfaces\ITrainingService.cs" />
+    <Compile Include="Service\Interfaces\ITrainingSessionService.cs" />
+    <Compile Include="Service\Models\Sales\CustomerDTO.cs" />
+    <Compile Include="Service\Models\Sales\KPIDTO.cs" />
+    <Compile Include="Service\Models\Sales\LeadActionDTO.cs" />
+    <Compile Include="Service\Models\Sales\SaleDTO.cs" />
+    <Compile Include="Service\Models\Support\SupportStaffRosterDTO.cs" />
+    <Compile Include="Service\PositionService.cs" />
+    <Compile Include="Service\ProjectDevelopmentService.cs" />
+    <Compile Include="Service\SaleLeadService.cs" />
+    <Compile Include="Service\SaleService.cs" />
+    <Compile Include="Service\SiteService.cs" />
+    <Compile Include="Service\SupportStaffShiftService.cs" />
+    <Compile Include="Service\SupportTicketService.cs" />
+    <Compile Include="Service\SupportTicketStateService.cs" />
+    <Compile Include="Service\TrainingSessionService.cs" />
+    <Compile Include="Service\TrainingService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{fed91f33-2a87-46da-b458-6d7d16ca76b0}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

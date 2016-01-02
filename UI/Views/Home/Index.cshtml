@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<style>
+
+    td {
+
+        text-align:center; 
+        padding: 10px; 
+        min-width:240px;
+    }
+
+
+     td > a
+     {
+
+        min-width:95%; 
+    }
+     table, th, td {
+        border: 1px solid #c4bfbf;
+}
+
+
+   @@media (min-width: 1200px) {
+  .container {
+    width: 1470px !important;
+  }
+}
+
+
+
+
+</style>
+
+
+
+<table border="1">
+
+
+<thead>
+    <tr>
+    <td>@Html.ActionLink("Administration", "Index", "Home", new { area = "Administration" }, new { @class = "btn btn-default" })</td>
+    <td>@Html.ActionLink("Development", "Index", "Home", new { area = "Development" }, new { @class = "btn btn-default" })</td>
+    <td>@Html.ActionLink("Management", "Index", "Home", new { area = "Management" }, new { @class = "btn btn-default" })</td>
+    <td>@Html.ActionLink("Sales", "Index", "Home", new { area = "Sales" }, new { @class = "btn btn-default" })</td>
+    <td>@Html.ActionLink("Support", "Index", "Home", new { area = "Support" }, new { @class = "btn btn-default" })</td>
+    <td>@Html.ActionLink("Training", "Index", "Home", new { area = "Training" }, new { @class = "btn btn-default" })</td>
+    </tr>
+</thead>
+    <tbody>
+        <tr>
+            <td>@Html.ActionLink("Customers", "Index", "Customer", new { area = "Administration" }, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Customers", "Index", "Customer", new { area = "Development" }, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Customers", "Index", "Customer", new { area = "Management" }, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Customers", "Index", "Customer", new { area = "Sales" }, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Customers", "Index", "Customer", new { area = "Support" }, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Customers", "Index", "Customer", new { area = "Training" }, new { @class = "btn btn-primary" })</td>
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Schedule", "Index", "Schedule", new { area = "Administration" }, new { @class = "btn btn-success" })</td>
+            <td>@Html.ActionLink("Schedule", "Index", "Schedule", new { area = "Development" }, new { @class = "btn btn-success" })</td>
+            <td>@Html.ActionLink("Schedule", "Index", "Schedule", new { area = "Management" }, new { @class = "btn btn-success" })</td>
+            <td>@Html.ActionLink("Schedule", "Index", "Schedule", new { area = "Sales" }, new { @class = "btn btn-success" })</td>
+            <td>@Html.ActionLink("Schedule", "Index", "Schedule", new { area = "Support" }, new { @class = "btn btn-success" })</td>
+            <td>@Html.ActionLink("Schedule", "Index", "Schedule", new { area = "Training" }, new { @class = "btn btn-success" })</td>  
+
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Employees", "Index", "Employee", new { area = "Administration" }, new { @class = "btn btn-danger" })</td>
+            <td>@Html.ActionLink("Employees", "Index", "Employee", new { area = "Development" }, new { @class = "btn btn-danger" })</td>
+            <td>@Html.ActionLink("Employees", "Index", "Employee", new { area = "Management" }, new { @class = "btn btn-danger" })</td>
+            <td>@Html.ActionLink("Employees", "Index", "Employee", new { area = "Sales" }, new { @class = "btn btn-danger" })</td>
+            <td>@Html.ActionLink("Employees", "Index", "Employee", new { area = "Support" }, new { @class = "btn btn-danger" })</td>
+            <td> @Html.ActionLink("Employees", "Index", "Employee", new { area = "Training" }, new { @class = "btn btn-danger" })</td>   
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Sites", "Index", "Site", new { area = "Administration" }, new { @class = "btn btn-warning" })</td>
+            <td>@Html.ActionLink("Sites", "Index", "Site", new { area = "Development" }, new { @class = "btn btn-warning" })</td>
+            <td>@Html.ActionLink("Sites", "Index", "Site", new { area = "Management" }, new { @class = "btn btn-warning" })</td>
+            <td>@Html.ActionLink("Sites", "Index", "Site", new { area = "Sales" }, new { @class = "btn btn-warning" })</td>
+            <td>@Html.ActionLink("Sites", "Index", "Site", new { area = "Support" }, new { @class = "btn btn-warning" })</td>
+            <td>@Html.ActionLink("Sites", "Index", "Site", new { area = "Training" }, new { @class = "btn btn-warning" })</td>     
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+                                                                                                   
+@section scripts {
+    <script src="~/Scripts/Home/index.js"></script>
+
+}

@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@*<link href="~/Areas/Training/Style/StyleSheet1.css" rel="stylesheet" />*@
+<h2>Register Training Type</h2>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <style>
+        html {
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <title></title>
+    <link rel="stylesheet" href="//kendo.cdn.telerik.com/2015.3.1111/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="//kendo.cdn.telerik.com/2015.3.1111/styles/kendo.material.min.css" />
+
+    <script src="//kendo.cdn.telerik.com/2015.3.1111/js/jquery.min.js"></script>
+    <script src="//kendo.cdn.telerik.com/2015.3.1111/js/kendo.all.min.js"></script>
+</head>
+<body>
+
+    <div id="example">
+        <div id="traininggrid"></div>
+
+        <div id="details"></div>
+
+        <script type="text/x-kendo-template" id="template">
+            <div id="details-container">
+                <h4>#= Name#</h4>
+                <em>#= Description #</em>
+                <dl>
+                    <dt> Duration (In Minutes): #=  DurationInMinutes #'</dt>
+                </dl>
+            </div>
+        </script>
+
+
+
+        <style type="text/css">
+            #details-container {
+                padding: 10px;
+            }
+
+                #details-container h3 {
+                    margin: 0;
+                }
+
+                #details-container em {
+                    color: #8c8c8c;
+                }
+
+                #details-container dt {
+                    margin: 0;
+                    display: inline;
+                }
+        </style>
+        @section scripts {
+            <script src="~/Scripts/Training/Grid/TrainingType.js"></script>
+        }
+
+
+
+
+
+       </div>
+
+   
+
+
+</body>
+</html>

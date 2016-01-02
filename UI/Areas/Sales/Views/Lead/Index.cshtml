@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <title>Index</title>
+    @*<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>*@
+    <script src="~/Scripts/kendo/2014.3.1411/angular.min.js"></script>
+    @*<script src="~/Scripts/Sales/angularindex.js"></script>*@
+</head>
+<h2>Sales Leads Index</h2>
+<div class="row">
+    <div class="col-lg-1"></div>
+
+    <div class="col-lg-10">
+        <div id="leads-table"></div>
+    </div>
+
+    <div class="col-lg-1"></div>
+</div>
+
+
+@section scripts{
+    <script src="~/Scripts/Sales/index.js"></script>
+
+}

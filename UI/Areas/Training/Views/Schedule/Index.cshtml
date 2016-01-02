@@ -1,0 +1,152 @@
+﻿
+@{
+	ViewBag.Title = "Index";
+}
+<div class="container body-content">
+	<div class="navbar navbar-default">
+		<div>
+			<ul class="nav navbar-nav">
+				@Html.ActionLink("Training Home Page", "Index", "Home", new { area = "Training" }, new { @class = "btn btn-success" })
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="specific">
+	<div class="container body-content">
+		<div class="navbar navbar-default">
+			<h1 style="margin: 0 0 0 0; outline-offset: 0">Training Session</h1>
+			<div class="row">
+				<div id="employeefilter" class="col-lg-11 col-md-10 col-lg-offset-1 col-md-offset-1 col-sm-12 col-xs-12">
+					<div class="row" style="margin-left:5px">
+						<label>Employee:</label>
+						<input id="allemployees" type="checkbox" />
+						<label>Site:</label>
+						<input id="allSites" type="checkbox"/>
+					</div>
+					<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="col-lg-11 col-md-11 col-sm-11 col-xs-10"><select id="multiselect1" multiple="multiple" style="width:100%; "></select> </div>
+						<div class="col-lg-11 col-md-11 col-sm-11 col-xs-10"><select id="multiselect2" multiple="multiple" style="width:100%; "></select> </div>
+						<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><button id="printpage" type="button" style="margin-top:2px">PDF</button></div>
+					</div>
+				</div>
+			</div>
+			<div id="session-scheduler"></div>
+		</div>
+	</div>
+
+</div>
+
+<style>
+	h1{
+		font-size: 30px;
+	}
+	#specific{
+		margin: 10px, 7px, 10px, 4px;
+	}
+	html {
+		font: 12px sans-serif;
+		overflow: auto;
+	}
+	#session-scheduler{
+		margin: 10px;
+	}
+	body{
+	   background-color:lightgrey
+	}
+	html,
+	#session-scheduler {
+		margin: 30px 0 0 0;
+		padding: 0;
+		height: 100%;
+		border-width: 0;
+	}
+	.k-scheduler-table td, .k-scheduler-table th
+	  {
+		padding: 2px 2px;
+	  }
+	.nav navbar-nav{
+		padding:0;
+	}
+</style>
+
+
+
+<script id="custom-shift-popup" type="text/x-kendo-template">
+	@*Site*@
+	<div class="k-edit-label">
+		<label for="siteId">Site</label>
+	</div>
+
+	<div data-container-for="siteId" class="k-edit-field">
+		<select id="siteId"
+				@*Data-bind and name is the same, it all bind*@
+				name="siteId"
+				data-role="dropdownlist"
+				data-value-field="Id"
+				data-text-field="Name"
+				data-option-label="--select site--" />
+	</div>
+
+	@*Employee*@
+	<div class="k-edit-label">
+		<label for="employeeTrainerId">Employee</label>
+	</div>
+	<div data-container-for="employeeTrainerId" class="k-edit-field">
+		<select id="employeeTrainerId"
+				name="employeeTrainerId"
+				data-role="dropdownlist"
+				data-value-field="EmployeeId"
+				data-text-field="EmployeeName"
+				data-option-label="--select employee--" />
+	</div>
+
+	@*Training*@
+	<div class="k-edit-label">
+		<label for="trainingId">Training Rate</label>
+	</div>
+	<div data-container-for="trainingId" class="k-edit-field">
+		<select id="trainingId"
+				name="trainingId"
+				data-role="dropdownlist"
+				data-value-field="Id"
+				data-text-field="RatePerHour"
+				data-option-label="--select Rate per Hour--" />
+	</div>
+
+	@*Start*@
+	<div class="k-edit-label">
+		<label for="start">Start</label>
+	</div>
+	<div data-container-for="start" class="k-edit-field">
+		<input data-role="datetimepicker"
+			   name="start" />
+		<span data-for="start" class="k-invalid-msg" style="display: none;"></span>
+	</div>
+
+	@*Duration*@
+	<div class="k-edit-label">
+		<label for="durationInMinutes">Duration (in Minutes)</label>
+	</div>
+	<div data-container-for="durationInMinutes" class="k-edit-field">
+		<input type="number"
+			   name="durationInMinutes" />
+	</div>
+
+	@*Delivered*@
+	<div class="k-edit-label">
+		<label for="delivered">Delivered</label>
+	</div>
+	<div data-container-for="delivered" class="k-edit-field">
+		<input type="checkbox"
+			   name="delivered" />
+	</div>
+</script>
+
+
+
+@section scripts {
+<script src="~/Scripts/kendo/2014.3.1411/kendo.timezones.min.js"></script>
+<script src="~/Scripts/console.js"></script>
+<script src="~/Scripts/Training/Schedule/TrainingSession.js"></script>
+
+}

@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2 id="grid-title">Support Tickets Grid</h2>
+
+<div id="grid"></div>
+<div id="details"></div>
+
+@* CUSTOM DETAILS CONTAINER *@
+<script type="text/x-kendo-template" id="template">
+    <div id="details-container">
+        <p>Time Created: #= kendo.toString(Timestamp, "MM/dd/yyyy") #</p>
+        <p>Site Name: #= Site.Name #</p>
+        <p>Ticket State: #= TicketState.Name #</p>
+        <p>Priority: #= Priority #</p>
+        <p>Ticket Description: #= Description #</p>
+    </div>
+</script>
+
+@* POPUP EDITOR TEMPLATE *@
+<script id="popup-editor" type="text/x-kendo-template">
+    <div class="k-edit-label">
+        <label for="Timestamp">Timestamp</label>
+    </div>
+    <div data-container-for="Timestamp" class="k-edit-field">
+        <input name="Timestamp" data-role="datepicker" required data-text-field="Name" data-value-field="Id" data-bind="value:Timestamp" />
+    </div>
+
+    <div class="k-edit-label">
+        <label for="Site.Name">Site</label>
+    </div>
+    <div data-container-for="Site.Name" class="k-edit-field">
+        <input required="" name="Site" data-text-field="Name" data-value-field="Id" data-bind="value: Site" data-role="dropdownlist" style="display: none;">
+    </div>
+
+    <div class="k-edit-label">
+        <label for="TicketState.Name">Ticket State</label>
+    </div>
+    <div data-container-for="TicketState.Name" class="k-edit-field">
+        <input required="" name="TicketState" data-text-field="Name" data-value-field="Id" data-bind="value: TicketState" data-role="dropdownlist" style="display: none;">
+    </div>
+
+    <div class="k-edit-label">
+        <label for="Priority">Priority</label>
+    </div>
+    <div data-container-for="Priority" class="k-edit-field">
+        <input type="text" name="Priority" min="1" max="5" data-type="number" data-bind="value:Priority" data-role="numerictextbox" role="spinbutton" class="k-input" aria-valuenow="1" aria-disabled="false" aria-readonly="false" style="display: none">
+    </div>
+
+    <div class="k-edit-label">
+        <label for="Description">Description</label>
+    </div>
+    <div data-container-for="Description" class="k-edit-field">
+        <textarea class="k-input k-textbox" name="Description" required="Required" data-bind="value: Description" rows="5"></textarea>
+    </div>
+</script>
+
+@section scripts{
+    <script src="~/Areas/Support/Content/Scripts/ticket-index.js"></script>
+}

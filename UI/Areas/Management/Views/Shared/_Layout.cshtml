@@ -1,0 +1,58 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Management Layout</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/kendocss")
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+    <meta name="description" content="Management Portal" />
+</head>
+@*<body background="~/Images/RedCatBackGround1.jpg">*@
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*@Html.Display("~/Images/redcat-logo-new.png" )*@
+                @*<img src="~/Images/redcat-logo-new.png" />*@
+                @Html.ActionLink("Portal", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @* Route Prefix /Displayed text/action(e.g index,create)/controller(Customer),/area*@
+
+                    <li>@Html.ActionLink("Management", "Index", "Home", new { area = "Management" }, new { })</li>
+                    <li>@Html.ActionLink("Customers", "Index", "Customer", new { area = "Management" }, new { })</li>
+                    <li>@Html.ActionLink("Employees", "Index", "Employee", new { area = "Management" }, new { })</li>
+                    <li>@Html.ActionLink("Sites", "Index", "Site", new { area = "Management" }, new { })</li>
+                    <li>@Html.ActionLink("Position", "Index", "Position", new { area = "Management" }, new { })</li>
+                    @*<li>@Html.ActionLink("Address", "Index", "Address", new { area = "Management" }, new { })</li>*@
+                    <li>@Html.ActionLink("Schedules", "Index", "Schedule", new { area = "Management" }, new { })</li>
+                    <li>@Html.ActionLink("Sales", "Index", "Sale", new { area = "Sales" }, new { })</li>
+                    <li>@Html.ActionLink("Projects In Development", "Index", "ProjectDevelopment", new { area = "Management" }, new { })</li>
+                    <li>@Html.ActionLink("Enhancement Requests", "Index", "EnhancementRequest", new { area = "Development" }, new { })</li>
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/kendojs")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

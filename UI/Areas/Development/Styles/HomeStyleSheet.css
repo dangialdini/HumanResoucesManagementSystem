@@ -1,0 +1,15 @@
+﻿.chart{
+    width: 500px;
+    height: 100%;
+    float: left;
+    position: absolute;
+}
+
+.doughnutChart{
+    width: 500px;
+    height: 100%;
+    float:right;
+    position: absolute;
+}
+
+

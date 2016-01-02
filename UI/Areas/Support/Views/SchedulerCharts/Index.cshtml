@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="row">
+
+    <div class="donut-wrapper">
+        <div id="scheduledhoursdonut" class="donut-chart"></div>
+        <div class="inner-content"></div>
+    </div>
+
+    <div class="donut-wrapper">
+        <div id="scheduledhoursdonut2" class="donut-chart"></div>
+    </div>
+</div>
+
+
+<style scoped>
+
+    .donut-wrapper {
+        display: inline-block;
+        position: relative;
+        width: 900px;
+        height:400px;
+        background-color: #ffffff;
+        padding: 0 50px 0 50px;
+    }
+
+    /* Width and Height of the chart must be equal to the width and height of the .donut-wrapper in order to be horizontally and vertically centered */
+    .donut-chart {
+        width:  900px;
+        height: 400px;
+    }
+
+    .inner-content {
+        position: absolute;
+        top:50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        margin-top:-50px;
+        margin-left:-50px;
+        font-size: 16px;
+        line-height: 100px;
+        vertical-align: middle;
+        text-align:center;
+        color: #a2ccef;
+    }
+
+</style>
+
+
+@section scripts {
+    <script src="~/Scripts/Support/Schedule/chart.js"></script>
+}

@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Domain.Models.Address">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAwAAAAAAAAAAAwAAAABAAAAAAAAAQA=</HashCode>
+      <FileName>Models\Address.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Offices" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Models.Company">
+    <Position X="6.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAAIAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Models\Company.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Customers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Models.Contact">
+    <Position X="8.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIECAAAAAAAAEAAAAAEAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Contact.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ContactType" />
+      <Property Name="Customer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Domain.Models.ContactType">
+    <Position X="6" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ContactType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.Country" Collapsed="true">
+    <Position X="21.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Models\Country.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.Customer">
+    <Position X="8.75" Y="7" Width="1.5" />
+    <AssociationLine Name="Sites" Type="Domain.Models.Site" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10" Y="10.094" />
+        <Point X="10" Y="11" />
+        <Point X="12.25" Y="11" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>hAAGAAAAACIAAAQAAAAAAAQAAAAAAAIAAAAAJAAAAAA=</HashCode>
+      <FileName>Models\Customer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SaleLeads" />
+      <Property Name="Sites" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Models.Employee">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Models\Employee.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Person" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Domain.Models.EmployeeInDevelopmentPosition">
+    <Position X="0.75" Y="4.25" Width="1.5" />
+    <AssociationLine Name="EmployeeInPostion" Type="Domain.Models.EmployeeInPosition">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="3.223" Y="0.106" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAgACAA=</HashCode>
+      <FileName>Models\EmployeeInDevelopmentPosition.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="EmployeeInPostion" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Domain.Models.EmployeeInPosition">
+    <Position X="6" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAgIAAAAAAIKACAAQAgAAAABAACABA=</HashCode>
+      <FileName>Models\EmployeeInPostion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Position" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Domain.Models.EmployeeInSalePosition" Collapsed="true">
+    <Position X="21.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Models\EmployeeInSalePosition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.EmployeeInSupportPosition" Collapsed="true">
+    <Position X="13.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Models\EmployeeInSupportPosition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.EmployeeInTrainingPosition">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Models\EmployeeInTrainingPosition.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="EmployeeInPostion" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="TrainingSessions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Models.EnhancementRequest" Collapsed="true">
+    <Position X="18" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAAAIgAAEAAAAAAEAAACAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\EnhancementRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.EnhancementRequestOutcome" Collapsed="true">
+    <Position X="21.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\EnhancementRequestOutcome.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.HRMSDBContext" Collapsed="true">
+    <Position X="16.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIFEABQAQIAAIAcgAQkAAQAKOAQgEAIQQQAABogIiQA=</HashCode>
+      <FileName>Models\HRMSDBContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.Office">
+    <Position X="3.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAAAAAAIAAAAAAAAAAAAAAAAAAAACAAAAIAAAAAA=</HashCode>
+      <FileName>Models\Office.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.Person">
+    <Position X="8.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAACIAAAAICAAAAAAACAAQAAAAAAAAJAAAAAA=</HashCode>
+      <FileName>Models\Person.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Company" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Domain.Models.Position">
+    <Position X="2.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAAgAAIAAAAAAAQAAAAAEAAAAAAAAAgAgAA=</HashCode>
+      <FileName>Models\Position.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="EmployeeInPostions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Models.Position_Development" Collapsed="true">
+    <Position X="18" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Position_Development.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.Position_Sales" Collapsed="true">
+    <Position X="0.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Position_Sales.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.Position_Support" Collapsed="true">
+    <Position X="2.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Position_Support.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.Position_Training" Collapsed="true">
+    <Position X="5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Position_Training.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.Project_Development" Collapsed="true">
+    <Position X="16.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAEAACAAAAAAAAAIAAAIAAAAAAAAAAAACAAACAg=</HashCode>
+      <FileName>Models\Project_Development.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.SaleLead">
+    <Position X="11.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAQAAAAAAAEAgCAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SaleLead.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SalePositionLeads" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Models.SaleLeadState" Collapsed="true">
+    <Position X="19.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SaleLeadState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.SalePositionLead">
+    <Position X="11.25" Y="4" Width="1.5" />
+    <AssociationLine Name="SaleLead" Type="Domain.Models.SaleLead">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.871" Y="0.125" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAGAAAAAAAAAIAAAEAAAAEAAAAAAAAAAAAACAAAABA=</HashCode>
+      <FileName>Models\SalePositionLead.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SaleLead" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Domain.Models.SalePositionLeadAction" Collapsed="true">
+    <Position X="14.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAyAAAAAAAAAAAAAAACAAACAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SalePositionLeadAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.Site">
+    <Position X="12.25" Y="10.25" Width="1.75" />
+    <AssociationLine Name="SupportTickets" Type="Domain.Models.SupportTicket" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.25" Y="11.785" />
+        <Point X="11.875" Y="11.785" />
+        <Point X="11.875" Y="13.719" />
+        <Point X="9.75" Y="13.719" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="TrainingSessions" Type="Domain.Models.TrainingSession" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.562" Y="10.25" />
+        <Point X="13.562" Y="2.354" />
+        <Point X="12.75" Y="2.354" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>wAECABAAACAAIAAAAAAAAAQAAAAAABACAAAAIAAAAEA=</HashCode>
+      <FileName>Models\Site.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SupportTickets" />
+      <Property Name="TrainingSessions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Models.State" Collapsed="true">
+    <Position X="18" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAIQAAAAQAAAAAgAAAA=</HashCode>
+      <FileName>Models\State.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.Suburb" Collapsed="true">
+    <Position X="21.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABCAAACQEAAAAAAABAIgAQAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Models\Suburb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.SupportTicket">
+    <Position X="8" Y="13.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAUAAggAAEAAACAAAAIAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Models\SupportTicket.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SupportTicketAssignments" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Models.SupportTicketAssignment">
+    <Position X="14.25" Y="14.75" Width="2.25" />
+    <AssociationLine Name="TicketAssignmentActions" Type="Domain.Models.TicketAssignmentAction" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.469" Y="14.75" />
+        <Point X="14.469" Y="14.375" />
+        <Point X="18.75" Y="14.375" />
+        <Point X="18.75" Y="14.123" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAQAAAAAAAAAAABAAAAAAAAgCAAA=</HashCode>
+      <FileName>Models\SupportTicketAssignment.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="TicketAssignmentActions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Models.Task_Development" Collapsed="true">
+    <Position X="20" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAACAgAAEAAAAAAAQIDAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Models\Task_Development.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.TicketAssignmentAction">
+    <Position X="18" Y="12.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAAAAAAgAAAAAAACAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\TicketAssignmentAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.TicketState">
+    <Position X="14.75" Y="12" Width="1.5" />
+    <AssociationLine Name="SupportTickets" Type="Domain.Models.SupportTicket" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.5" Y="13.747" />
+        <Point X="15.5" Y="14.312" />
+        <Point X="9.75" Y="14.312" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACABAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\TicketState.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SupportTickets" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Models.Training" Collapsed="true">
+    <Position X="14.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAIAAEAIAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Models\Training.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.TrainingSession">
+    <Position X="10.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAECAAgAAAAAAAAAAAEAIAAQAAQAAAAAAAAgA=</HashCode>
+      <FileName>Models\TrainingSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.TrainingType" Collapsed="true">
+    <Position X="16.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAEAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\TrainingType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Models.Zone" Collapsed="true">
+    <Position X="21.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\Zone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

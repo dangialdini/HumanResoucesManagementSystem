@@ -1,0 +1,179 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Sales Layout</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/kendocss")
+    @Scripts.Render("~/bundles/kendojs");
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Portal", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Customers", "Index", "Customer")</li>
+                    <li>@Html.ActionLink("Sales", "Index", "Sale")</li>
+                    <li>@Html.ActionLink("Leads", "Index", "Lead")</li>
+                    <li>@Html.ActionLink("Actions", "Index", "LeadAction")</li>
+                    <li>@Html.ActionLink("Products", "Index", "Product")</li>
+                    
+</ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+ 
+    @Scripts.Render("~/bundles/kendojs")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+<style>
+    k-widget{
+        border-color: white;
+    }
+
+    /*.k-widget{
+        background-color: #b3ccff;
+        border-color: #0044cc;
+        box-shadow: inherit;
+    }
+    .k-header{
+        border-color: #0044cc;
+        background-color: #80aaff;
+    }
+    .k-block{
+        border-color:#0044cc;
+        background-color: #80aaff;
+    }
+    .k-grid-header{
+        background-color:#80aaff;
+                border-color:#0044cc;
+    }
+    .k-button{
+        background-color: #ccddff;
+        border-color: #0044cc;
+        color: #002a80;
+    }
+    .k-input{
+        border-color: #0044cc;
+        color: #002a80;
+    }
+    #autocomplete{
+        border-color: #0044cc;
+        color: #002a80;
+    }
+    .k-autocomplete.k-state-default, .k-picker-wrap.k-state-default, .k-numeric-wrap.k-state-default, .k-dropdown-wrap.k-state-default{
+        border-color: #0044cc;
+        color: #002a80;
+    }
+    .k-button:hover{
+        border-color: #0044cc;
+        color: #ccddff;
+        background-color: #0044cc;
+    }
+    .k-link{
+        border-color: #0044cc;
+        color: #002a80;
+    }
+    .k-link:hover{
+        border-color: #0044cc;
+        color: #ccddff;
+        background-color: #0044cc;
+    }*/
+    .k-event{
+        border-color: #ccddff;
+        color: #0044cc;
+        background-color: #ccddff;
+    }
+    table{
+        border-color: #b3ccff;
+        color: #002a80;
+    }
+    k-state-default{
+        border-color: #0044cc;
+        color: #002a80;
+    }
+    .k-scheduler-times tr, .k-scheduler-times th, .k-scheduler-table td, .k-scheduler-header th, .k-scheduler-header-wrap, .k-scheduler-times{
+        border-color: #b3ccff;
+        color: #002a80;
+    }
+    .k-scheduler{
+        background-color: white;
+    }
+    .k-scheduler-header{
+        border-color: #0044cc;
+        color: #002a80;
+    }
+    .k-state-selected{
+        border-color: #0044cc;
+        color: #ccddff;
+        background-color: #0044cc;
+    }
+    .k-grouping-row td, .k-group-footer td, .k-grid-footer td{
+        background-color: #b3ccff;
+        border-color: #b3ccff;
+        color: #0044cc;
+    }
+    td{
+        border-color: #b3ccff;
+    }
+    /*td:hover{
+        border-color: #0044cc;
+        color: #ccddff;
+        background-color: #0044cc;
+    }
+    
+    td.k-today.k-nonwork-hour{
+        background-color: white;
+    }
+    td.k-nonwork-hour{
+        background-color: white;
+    }*/
+
+    .k-detail-cell{
+        background-color: #b3ccff;
+        padding: 0;
+    }
+    .k-state-selected, .k-state-selected:link, .k-state-selected:visited, .k-list>.k-state-selected, .k-list>.k-state-highlight, .k-panel>.k-state-selected, .k-ghost-splitbar-vertical, .k-ghost-splitbar-horizontal, .k-draghandle.k-state-selected:hover, .k-scheduler .k-scheduler-toolbar .k-state-selected, .k-scheduler .k-today.k-state-selected, .k-marquee-color{
+        border-color: #0044cc;
+        color: #ccddff;
+        background-color: #0044cc;
+    }
+
+    /*.k-detail-cell > .k-widget{
+        background-color: red;
+    }
+    .k-detail-cell > .k-header-toolbar{
+        background-color: red;
+    }
+    .k-detail-cell > .k-button{
+        background-color: red;
+    }*/
+    
+</style>

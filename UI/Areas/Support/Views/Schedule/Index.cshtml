@@ -1,0 +1,186 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@* (Shift) Editor Template (popup) *@
+<script id="customshiftpopup" type="text/x-kendo-template">
+
+    @* Date Selected *@
+    <div class="k-edit-label">
+        <label for="dateselected">Date</label>
+    </div>
+    <div data-container-for="dateselected" class="k-edit-field">
+        <input class="k-state-disabled"
+               id="dateselected"
+               name="dateselected"
+               data-role="datepicker"
+               data-bind="value:start"
+               data-culture="en-AU"
+               data-format="{0:dd/MM/yyyy}"
+               readonly="readonly" />
+    </div>
+
+    @* Employee *@
+    <div class="k-edit-label">
+        <label for="employeeId">Employee</label>
+    </div>
+    <div data-container-for="employeeId" class="k-edit-field">
+        <select id="employeeId"
+                name="employeeId"
+                data-bind="value:employeeId"
+                data-role="dropdownlist"
+                data-value-field="EmployeeId"
+                data-text-field="EmployeeName"
+                data-option-label="-- Select Employee --"
+                data-required-msg="Please select an employee" required />
+        <span data-for="employeeId" class="k-invalid-msg" style="display: none;"></span>
+    </div>
+
+    @* Color Picker *@
+    <div class="k-edit-label">
+        <label for="color">Color</label>
+    </div>
+    <div data-container-for="color" class="k-edit-field">
+        <select id="color"
+                name="color"
+                data-bind="value:color"
+                data-role="colorpicker"
+                data-buttons="false" />
+    </div>
+
+    @* Start *@
+    <div class="k-edit-label">
+        <label for="start">Start</label>
+    </div>
+    <div data-container-for="start" class="k-edit-field">
+        <input id="start"
+               name="start"
+               onkeydown="return false;"
+               data-role="timepicker"
+               data-bind="value:start"
+               data-value="null"
+               data-min="08:00"
+               data-max="20:00"
+               data-format="hh:mm tt"
+               data-interval="15"
+               data-required-msg="Please select a start time from the dropdown list" required />
+        <span data-for="start" class="k-required-msg" style="display: none;"></span>
+    </div>
+
+    @* End *@
+    <div class="k-edit-label">
+        <label for="end">End</label>
+    </div>
+    <div data-container-for="end" class="k-edit-field">
+        <input id="end"
+               name="end"
+               onkeydown="return false;"
+               data-value="null"
+               data-role="timepicker"
+               data-bind="value:end"
+               data-min="11:00"
+               data-max="22:00"
+               data-interval="15"
+               data-format="hh:mm tt"
+               data-datecompare-msg="End time should be greater than the start time"
+               data-required-msg="Please select an end time from the dropdown list" required />
+        <span data-for="end" class="k-invalid-msg k-required-msg" style="display: none;"></span>
+    </div>
+
+    @* RecurrenceRule *@
+    <div class="k-edit-label">
+        <label for="recurrenceRule">Repeat</label>
+    </div>
+    <div data-container-for="recurrenceRule" class="k-edit-field">
+        <div data-bind="value:recurrenceRule"
+             name="recurrenceRule"
+             data-role="recurrenceeditor"></div>
+    </div>
+
+    @* Description / Notes *@
+    <div class="k-edit-label">
+        <label for="description">Notes</label>
+    </div>
+    <div data-container-for="description" class="k-edit-field">
+        <textarea id="description"
+                  data-bind="value:description"
+                  name="description"
+                  class="k-textbox"></textarea>
+    </div>
+</script>
+
+@* SCHEDULER *@
+<div id="schedulerpage" class="k-content">
+    <div id="employeewell" class="well container-fluid row">
+        <h3>Staff Roster</h3>
+        <div class="row">
+            <div id="employeefilter" class="col-lg-11 col-md-10 col-lg-offset-1 col-md-offset-1 col-sm-12 col-xs-12">
+                <div class="row" style="margin-left:5px">
+                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                        <label>Filter by Employee:</label>
+                        <input id="allemployees" type="checkbox" />
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        <button id="printpage" type="button">Print</button>
+                    </div>
+                </div>
+                <div id="toggle" class="col-lg-11 col-md-11 col-sm-11 col-xs-10" hidden>
+                    <select id="multiselect" multiple="multiple" style="width:100%;"></select>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="scheduler"></div>
+</div>
+
+
+@* ** Custom Styles ** *@
+<style scoped>
+    #employeewell {
+        margin: 0 0 0 0;
+    }
+
+    html,
+    body,
+    #schedulerpage,
+    #scheduler {
+        margin: 0 0 0 0;
+        padding: 0;
+        height: 100%;
+        border-width: 0;
+    }
+
+    .k-scheduler-times td, .k-scheduler-times th {
+        padding: 2px 2px;
+    }
+
+    .k-event, .k-more-events {
+        border-width: 0;
+    }
+
+    h2 {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    h3 {
+        margin-top: 5px;
+        float: left;
+    }
+
+    html {
+        font: 12px sans-serif;
+        overflow: auto;
+        margin-top: 40px;
+    }
+
+    .col-sm-11, .col-sm-1 {
+        padding-left: 0;
+    }
+</style>
+
+
+@section scripts {
+    <script src="~/Scripts/Support/Schedule/index.js"></script>
+}

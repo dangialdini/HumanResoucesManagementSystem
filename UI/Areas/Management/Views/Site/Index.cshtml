@@ -1,0 +1,182 @@
+﻿@model UI.Areas.Management.Models.ManagementSiteViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Site</h2>
+
+<div id="site-grid"></div>
+<div id="site-map"></div>
+
+<div id="application">
+
+</div>
+
+@section scripts {
+    <style>
+        input,
+        select,
+        textarea {
+            max-width: 100%;
+        }
+        .k-dropdown {
+            width: 100%;
+        }
+    </style>
+    <script id="add-template" type="text/x-kendo-template">
+        <a class="k-button" href="\#/create"><span class="k-icon k-add"></span>Add New Site</a>
+    </script>
+    <script id="create-template" type="text/x-kendo-template">
+        <h3>Create</h3>
+        <div class="form-horizontal" id="create-form">
+            <div class="form-group">
+                <label class="col-md-2 control-label">CustomerId</label>
+                <div class="col-md-6">
+                    <input name="CustomerId" data-bind="value: customerId" required />
+                    <span class="k-invalid-msg" data-for="CustomerId"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">AddressId</label>
+                <div class="col-md-6">
+                    <input name="AddressId" data-bind="value: addressId" required />
+                    <span class="k-invalid-msg" data-for="AddressId"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Name</label>
+                <div class="col-md-10">
+                    <input name="Name" data-bind="value: name" required />
+                    <span class="k-invalid-msg" data-for="Name"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Phone</label>
+                <div class="col-md-10">
+                    <input name="Phone" data-bind="value: phone" required />
+                    <span class="k-invalid-msg" data-for="Phone"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Email</label>
+                <div class="col-md-10">
+                    <input name="Email" data-bind="value: email" required />
+                    <span class="k-invalid-msg" data-for="Email"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Franchise</label>
+                <div class="col-md-10">
+                    <input name="Franchise" data-bind="value: franchise" required />
+                    <span class="k-invalid-msg" data-for="Franchise"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">HeadQuarters</label>
+                <div class="col-md-10">
+                    <input name="HeadQuarters" data-bind="value: headQuarters" required />
+                    <span class="k-invalid-msg" data-for="HeadQuarters"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button class="btn btn-primary" data-bind="enabled: submitEnabled, click: submit" type="button">Submit</button>
+                    <a class="btn btn-default" href="#/">Back To Index</a>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="index-template" type="text/x-kendo-template">
+        <h3>Index</h3>
+        <div id="index-grid"></div>
+    </script>
+    <script id="edit-template" type="text/x-kendo-template">
+        <h3>Edit</h3>
+        <div class="form-horizontal" id="edit-form">
+            <input type="hidden" data-bind="value: current.Id" name="Id" />
+            <div class="form-group">
+                <label class="col-md-2 control-label">CustomerId</label>
+                <div class="col-md-6">
+                    <input name="CustomerId" data-bind="value: current.CustomerId" required />
+                    <span class="k-invalid-msg" data-for="CustomerId"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">AddressId</label>
+                <div class="col-md-6">
+                    <input name="AddressId" data-bind="value: current.AddressId" required />
+                    <span class="k-invalid-msg" data-for="AddressId"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Name</label>
+                <div class="col-md-10">
+                    <input name="Name" data-bind="value: current.Name" required />
+                    <span class="k-invalid-msg" data-for="Name"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Phone</label>
+                <div class="col-md-10">
+                    <input name="Phone" data-bind="value: current.Phone" required />
+                    <span class="k-invalid-msg" data-for="Email"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Email</label>
+                <div class="col-md-10">
+                    <input name="Email" data-bind="value: current.Email" required />
+                    <span class="k-invalid-msg" data-for="Email"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Franchise</label>
+                <div class="col-md-10">
+                    <input name="Franchise" data-bind="value: current.Franchise" required />
+                    <span class="k-invalid-msg" data-for="Franchise"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">HeadQuarters</label>
+                <div class="col-md-10">
+                    <input name="HeadQuarters" data-bind="value: current.HeadQuarters" required />
+                    <span class="k-invalid-msg" data-for="Franchise"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button class="btn btn-primary" data-bind="enabled: submitEnabled, click: submit" type="button">Submit</button>
+                    <a class="btn btn-default" href="#/">Back To Index</a>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="detail-template" type="text/x-kendo-template">
+        <h3>Details</h3>
+
+        <div id="#site-map"></div>
+        <dl class="dl-horizontal">
+            <dt>Customer</dt>
+            <dd data-bind="text: customer.Name"></dd>
+            <dt>Address</dt>
+            <dd data-bind="text: address.FullAddress"></dd>
+            <dt>Name</dt>
+            <dd data-bind="text: site.name"></dd>
+            <dt>Phone</dt>
+            <dd data-bind="text: site.phone"></dd>
+            <dt>Email</dt>
+            <dd data-bind="text: site.email"></dd>
+            <dt>Franchise</dt>
+            <dd>
+                <input type="checkbox" data-bind="checked: site.franchise" disabled>
+            </dd>
+            <dt>Headquarters</dt>
+            <dd>
+                <input type="checkbox" data-bind="checked: site.headQuarters" disabled>
+            </dd>
+        </dl>
+        <a class="btn btn-default" href="#/">Back To Index</a>
+    </script>
+    <script src="~/Scripts/Site/index.js"></script>
+}
