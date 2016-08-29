@@ -1,0 +1,9 @@
+﻿<menu>
+    <menu-box ng-repeat="item in menu.portalMenuObject" ng-click="menu.openMenuItem(item.text)" class="menuBox">
+        <i  class="fa {{ item.icon }}" />
+        <menu-box-text>
+            <menu-box-heading>{{ item.text }}</menu-box-heading>
+            <menu-box-summary>{{ item.summary }}</menu-box-summary>
+        </menu-box-text>
+    </menu-box>
+</menu>

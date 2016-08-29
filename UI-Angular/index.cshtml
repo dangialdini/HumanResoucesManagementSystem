@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TAFE 2015 - Semester 2 Major Project</title>
+
+        <meta http-equiv="cache-control" content="max-age=0" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="0" />
+        <meta http-equiv="pragma" content="no-cache" />
+
+        <link href="~/Vendor/Styles/Content/font-awesome.min.css" rel="stylesheet" />
+        <link href="~/Vendor/Styles/Kendo/kendo.common-fiori.min.css" rel="stylesheet" />
+        <link href="~/Vendor/Styles/Kendo/kendo.fiori.min.css" rel="stylesheet" />
+        <link href="~/Vendor/Styles/Kendo/kendo.fiori.mobile.min.css" rel="stylesheet" />
+        <link href="~/App/Global/Styles/main.css" rel="stylesheet" />
+        <base href="/">
+    </head>
+<body ng-controller="MainController">
+    <banner></banner>
+    <portal-container ng-transclude>
+        <ui-view class="{{ general.portal }}"></ui-view>
+    </portal-container>
+
+
+    @* Vendor Scripts *@
+    <script src="~/Vendor/Scripts/Kendo/jquery.min.js"></script>
+    <script src="~/Vendor/Scripts/Angular/angular.min.js"></script>
+    <script src="~/Vendor/Scripts/Angular/angular-ui-router.min.js"></script>
+    <script src="~/Vendor/Scripts/Kendo/kendo.all.min.js"></script>
+
+    @* GLOBAL App Scripts *@
+    <script src="~/App/Global/appModule.js"></script>
+    @{
+        string portal = Request.Url.AbsolutePath.ToString();
+
+        if (portal != "/")
+        {
+            string[] scriptList = new string[3] {
+                "App/portals" + portal + "/" + portal + "Controller",
+                "App/portals" + portal + "/" + portal + "Config",
+                "App/portals" + portal + "/" + portal + "Scripts"
+            };
+
+            for (int i = 0; i < scriptList.Length; i++)
+            {
+                string timestamp = new DateTime().TimeOfDay.ToString();
+                System.Web.UI.HtmlControls.HtmlGenericControl newControl = new System.Web.UI.HtmlControls.HtmlGenericControl("script");
+                newControl.Attributes["type"] = "text/javascript";
+                newControl.Attributes["src"] = scriptList[i] + ".js" + timestamp;
+                Page.Header.Controls.Add(newControl);
+            }
+        }
+    }
+    <script src="~/App/Global/appConfig.js"></script>
+    <script src="~/App/Global/appController.js"></script>
+    <script src="~/App/Global/services.js"></script>
+    <script src="~/App/Global/directives.js"></script>
+    <script src="~/App/Global/filters.js"></script>
+    <script src="~/App/Global/menuController.js"></script>
+
+</body>
+</html>

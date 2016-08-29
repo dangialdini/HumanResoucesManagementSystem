@@ -1,0 +1,90 @@
+﻿banner {
+    position:fixed;
+    top:0;
+    width:100%;
+    height: 80px;
+    background-color: #887198;
+    display: block;
+    position: relative;
+    color: white;
+
+    left {
+        display: block;
+        position: absolute;
+        height: 80px;
+        left: 0;
+        top: 0;
+
+        .logo {
+            position: absolute;
+            bottom: 0;
+            margin-left: 50px;
+            margin-right: 50px;
+            height: 80px;
+        }
+    }
+
+    middle {
+        display: block;
+        height: 80px;
+        position: relative;
+        padding: 0 370px 0 250px;
+        font-size: 20px;
+        color: whitesmoke;
+
+        .view {
+            padding-top: 25px;
+
+            i {
+                float: left;
+                padding-right: 5px;
+                padding-top: 2px;
+                color: #000000;
+            }
+        }
+    }
+
+    right {
+        display: block;
+        position: absolute;
+        height: 80px;
+        right: 0;
+        top: 0;
+        width: 370px;
+        text-align: right;
+
+        username {
+            display: block;
+            margin-right: 50px;
+            font-size: 13px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            text-align: right;
+        }
+
+        logout {
+            display: block;
+            margin-right: 50px;
+            text-transform: uppercase;
+            font-size: 11px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .companyLogo {
+            margin-right: 50px;
+            height:30px;
+        }
+
+        & > span {
+            display: inline-block;
+            width: 170px;
+        }
+
+        .bannerIcons {
+            margin-top: 20px;
+        }
+    }
+}

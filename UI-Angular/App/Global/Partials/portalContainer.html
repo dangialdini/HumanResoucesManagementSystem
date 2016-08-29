@@ -1,0 +1,7 @@
+﻿<actions-menu ng-if="general.activeView==='View'"></actions-menu>
+
+<backtotopbtn ng-class="{active: general.scrollHeight>0}" ng-click="general.backToTop()">Back to Top</backtotopbtn>
+
+<async-overlay class="k-overlay" ng-show="general.asyncEventInProgress">
+    <load-logo></load-logo>
+</async-overlay>

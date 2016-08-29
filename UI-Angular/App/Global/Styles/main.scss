@@ -1,0 +1,14 @@
+﻿
+@import "banner";
+@import "buttons";
+@import "menu";
+
+body {
+    margin: 0;
+    font-family: Calibri, Candara, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style:normal;
+}
+
+load-logo {
+    background-image:url(../Images/Loading1.gif);
+}

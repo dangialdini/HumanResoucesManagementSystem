@@ -1,0 +1,146 @@
+﻿banner-menus, sub-menu {
+    display: inline-block;
+    padding-right: 20px;
+    text-align: left;
+    vertical-align: top;
+
+    .k-menu {
+        /*display: inline-block;
+                margin-left: 6px;
+                background: $mainBlue;*/
+        .k-item > .k-link {
+            background-color: #000000;
+            border-color: #000000;
+            color: #fafafa;
+        }
+
+        .k-item > .k-link:hover {
+            color: #dddddd;
+        }
+
+        .k-item {
+            padding: 0 !important;
+            /*display: inline-block;
+                    background: transparent;
+                    color: #fff !important;*/
+            cursor: pointer !important;
+            background-color: #000000;
+            border-color: #1b85bd;
+
+            > .k-link {
+                padding: 12px 18px 10px 13px;
+                line-height: 1em;
+                margin-right: 8px;
+            }
+
+            .k-animation-container {
+                /*margin-top: 0px !important;
+                        text-align: left;*/
+                .k-group {
+                    border: 0 !important;
+                    border-width: 0px !important;
+                    margin-left: 0px !important;
+                    padding: 0 !important;
+
+                    > .k-item:hover {
+                        background-image: #000000;
+                        border-color: #000000;
+                    }
+
+                    .k-state-hover .k-state-hover:hover {
+                        background-image: #000000;
+                        border-color: #000000;
+                    }
+
+                    .k-state-hover > .k-link {
+                        color: #dddddd;
+                        text-decoration: none;
+                    }
+
+                    .k-link {
+                        padding: 15px 20px 15px 15px;
+
+                        img {
+                            max-width: 30px;
+                            margin: -8px 8px -8px -7px !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .k-item > .k-link > .k-icon {
+            margin: 0px !important;
+            padding: 0px !important;
+            position: absolute !important;
+            right: 5px !important;
+            top: 47% !important;
+            margin-top: -7px !important;
+            opacity: 1 !important;
+            background-position: -16px -32px !important;
+        }
+    }
+}
+
+actions-menu {
+    display: block;
+    height: 50px;
+    position: fixed;
+    top: 80px;
+    z-index: 50;
+    right: 2px;
+    padding-right: 0;
+}
+
+i {
+    padding-right: 8px;
+}
+
+main-menu {
+    display: block;
+    max-width: 948px;
+    margin: 0 auto;
+    padding: 100px 0 0 0;
+    position: relative;
+
+    .menuBox {
+        width: 450px;
+        display: inline-block;
+        background-color: #dddddd;
+        padding: 15px 20px;
+        border-radius: 0;
+        margin: 2px;
+        vertical-align: top;
+        height: 95px;
+        text-align: left;
+        cursor: pointer;
+        -webkit-box-sizing: border-box;
+
+        i {
+            display: inline-block;
+            float: left;
+            position: relative;
+            margin-right: 5px;
+            font-size:xx-large;
+        }
+
+        menu-box-text {
+            display: block;
+            margin-top: 10px;
+
+            menu-box-heading {
+                color:black;
+                font-size: 22px;
+                font-weight: bold;
+                margin-bottom: 5px;
+                display:block;
+            }
+
+            menu-box-summary {
+                color: #000000;
+                font-size: 13px;
+                margin-left:45px;
+            }
+        }
+    }
+}

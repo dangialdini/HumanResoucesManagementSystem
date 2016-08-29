@@ -1,0 +1,30 @@
+﻿<banner-items>
+
+    <left>
+        <img class="logo" src="App/Global/Images/generic-logo.png" />
+    </left>
+
+
+    <middle ng-if="general.currentView === 'Page'">
+        <div class="view">
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <view>
+                {{ general.currentView }}
+            </view>
+        </div>
+    </middle>
+
+
+    <right ng-if="general.loggedIn">
+        <banner-menus ng-if="general.currentView === 'Page'">
+            <ul class='menu' kendo-menu="menu.bannerMenu" k-options='menu.bannerMenuOptions'></ul>
+        </banner-menus>
+
+        <span>
+            <img class="companyLogo" src="App/Global/Images/generic-logo.png" />
+            <username>John Doe</username>
+            <logout ng-click="general.temporaryLogout()">Logout</logout>
+        </span>
+    </right>
+
+</banner-items>
